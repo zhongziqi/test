@@ -76,29 +76,90 @@ function clearCookie(name) {
     setCookie(name, "", -1);
 }
 
-//尾部组件
+
+
+
+
+
+
+
+
+
+
+
+
+//头部组件
 header = Vue.extend({
-	template:`<div class="box_center clear">
-	            <div class="fl">
-	              <img src="img/logo.png" alt="">
-	            </div>
-	            <div class="fr">
-	              <ul class='clear'>
-	                <li><a href="#">首页</a></li>
-	                <li><a href="#">客户案例</a></li>
-	                <li>
-	                  <a href="#">技术服务</a>
-	                  <b class="b2"></b>
-	                  <div class="dev_type"></div>
-	                </li>
-	                <li><a href="#">行业新闻</a></li>
-	                <li><a href="#">我要定制</a></li>
-	                <li><a href="#">关于我们</a></li>
-	              </ul>
-	            </div>
-	          </div>`,
+	template:`      <div class="box_center clear">
+	    	            <div class="fl">
+	    	              <img src="img/logo.png" alt="">
+	    	            </div>
+	    	            <div class="fr">
+	    	              <ul class='clear'>
+	    	                <li><a href="#">首页</a></li>
+	    	                <li><a href="#">客户案例</a></li>
+	    	                <li>
+	    	                  <a href="#">技术服务</a>
+	    	                  <b class="b2"></b>
+	    	                  <div class="dev_type">
+	                            <ul class="clear">
+	                              <li @click='service_click(0)'><a href="#"><img src="img/ic_phone.png" alt=""><span>App开发</span></a><b></b></li>
+	                              <li @click='service_click(1)'><a href="#"><img src="img/ic_web_copy_4.png" alt=""><span>小程序开发</span></a><b></b></li>
+	                              <li @click='service_click(2)'><a href="#"><img src="img/ic_web.png" alt=""><span>网站定制</span></a><b></b></li>
+	                              <li @click='service_click(3)'><a href="#"><img src="img/ic_h5.png" alt=""><span>H5&手机网页</span></a></li>
+	                            </ul>
+	    										</div>
+	    	                </li>
+	    	                <li><a href="#">行业新闻</a></li>
+	    	                <li><a href="#">我要定制</a></li>
+	    	                <li><a href="#">关于我们</a></li>
+	    	              </ul>
+	    	            </div>
+	    	          </div>`,
+									data:function(){
+										return{
+											service_index:5
+										}
+									},
+									methods:{
+										service_click:function(e){
+
+										}
+									}
 });
 Vue.component("common-header", header);
 var header = new Vue({
 	el: "#header"
+});
+
+//尾部组件
+footer = Vue.extend({
+	template:` <div> <div class="box_center_two">
+			<div class="fl">
+				<img src="img/logo.png" alt="">
+				<p>领先的互联网解决方案</p>
+			</div>
+			<div class="fl">
+				<ul class="clear common_line_height">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">App开发</a></li>
+					<li><a href="#">小程序开发</a></li>
+					<li><a href="#">H5&手机网页</a></li>
+					<li><a href="#">网站建设</a></li>
+					<li><a href="#">关于我们</a></li>
+				</ul>
+				<p class="common_line_height"><span>企业 QQ</span><span class="smaller">854111157 ／ 592819479</span></p>
+				<p class="middle_content common_line_height"><span>企业热线</span><span class="smaller">15018504813 ／ 15018505691 ／ 15018693554</span></p>
+				<p class="common_line_height"><span>企业地址</span><span>深圳市龙岗区龙城大道花样年龙年广场2305-2306</span></p>
+				<p class="line"></p>
+			</div>
+			<div class="fr">
+				<img src="img/pic_qr.png" alt="">
+			</div>
+		</div>
+		<p class="clear bottom_words box_center_three"><span class="fl">© DANKAL . All rights reserved . 粤ICP备16007023号-1</span><span class="fr">Wechat Number</span></p></div>`,
+});
+Vue.component("common-footer", footer);
+var footer = new Vue({
+	el: "#footer"
 });
