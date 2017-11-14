@@ -35,7 +35,7 @@ li{list-style-type: none;}
 .header .fl>img{width: 178px;height: 43px;}
 .header ul>li{float: left;}
 .header ul>li:hover a{color: #F7D043!important;}
-.header ul>li>a{font-size: 16px;color: #fff!important;line-height: 59px;}
+.header ul>li>a{font-size: 16px;color: #fff;line-height: 59px;}
 .header ul>li:not(:last-child){margin-right: 40px;}
 .header .b2{display:inline-block;border:5px solid transparent;border-right:5px solid #fff;margin-left: 5px;transform-origin:8.5px 5px;
 -ms-transform-origin:8.5px 5px;

@@ -1,41 +1,5 @@
-.solve{
-    margin-top: 25px;
-    padding-top: 74px;
-    margin-bottom: 43px;
-}
-.solve >h2{
-    width:100%;
-    height:42px; 
-    font-size:42px;
-    font-family:PingFangSC-Medium;
-    color:rgba(51,51,51,1);
-    line-height:43px;
-    text-align: center;
-    margin-bottom: 25px;
-}
-.solve>p{
-    width:100%;
-    height:14px; 
-    font-size:14px;
-    font-family:STXihei;
-    color:rgba(51,51,51,1);
-    line-height:14px;
-    text-align: center;
-    margin-bottom: 89px;
-}
-.box_all_case{
-    padding-left: 6%;
-}
-.small_img_box{
-    width: 9%;
-    height: 8%;
-    border-radius: 9px;
-    float: left;
-    margin-right: 12%;
-    margin-bottom: 10%;
-}
-.no_margin_right{
-    margin-right: 0;
+.bannerImg{
+    margin-bottom: 120px;
 }
 .dankal_case{
     margin-bottom: 81px!important;
@@ -77,10 +41,11 @@
     text-align: center;
 }
 .icon_img{
-    width:30px;
+   width:30px;
     height:30px;  
     margin: 0 auto;
 }
+
 .all_case_box{
     padding-left: 56px;
     box-sizing: border-box;
