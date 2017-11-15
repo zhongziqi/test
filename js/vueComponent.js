@@ -132,6 +132,150 @@ var header = new Vue({
 	el: "#header"
 });
 
+
+//蛋壳案例
+main = Vue.extend({
+	template:`      <div class="box_center dankal_case">
+            <div class="box_center title_top">
+                <span class="titiel_content">蛋壳案例</span>
+                <div class="line_left"></div>
+                <div class="line_right"></div>
+            </div>
+            <div class="icon_box">
+                <img src="img/ic_case.png" alt="" class="icon_img">
+            </div>
+            <!--案例的集合-->
+            <div class="box_center clear all_case_box "> 
+                <div class="case_box" v-for="(item,index) in caseList" :key="index">
+                    <!--图片-->
+                    <div class="case_img_Box">
+                        <img class="img_cover" style="display: block;" :src="item.img_url" alt="">
+                    </div>
+                    <div class="nothing"></div>
+                    <!--阴影-->
+                    <div class="show_bg"></div>
+                    <!--文字-->
+                    <p class="the_title ellipsis_2">顺丰同城 | 跨界营销打入年轻消费市场 —— 热门 IP 合作</p>
+                    <p class="the_detail ellipsis_2">越来越多的著名品牌，开始借助“跨界”营销，寻求强强联合的品牌协同效应。每个动漫IP内容有了形象的故事，在此基础 […]</p>
+                </div>
+            </div>         
+        </div>`,
+									data:function(){
+										return{
+											caseList:''
+										}
+									},
+									methods:{
+										service_click:function(e){
+
+										}
+									},
+									created(){
+										let api = 'http://big.dankal.cn/api';
+										// 判断是那个页面
+										let url = window.location.href;
+										let a = url.split("test/")[1];
+										let b = a.split('.')[0];
+
+										if(b == 'app'){
+												$.ajax({
+													url: api + '/Website/casesList',
+													type: 'post',
+													// headers: {
+													// 	"token": configSELF.token,
+													// },
+													data: {
+														type: 'web',
+														case_type:'dankal'
+													},
+													success: function(data) {
+														this.caseList = data.data.casesLst;
+														console.log(this.caseList,'app数据')
+													},
+													error: function(error) {
+														console.log(error)
+													},
+												});
+										}else if(b == 'phone'){
+												$.ajax({
+													url: api + '/Website/casesList',
+													type: 'post',
+													// headers: {
+													// 	"token": configSELF.token,
+													// },
+													data: {
+														type: 'mobile',
+														case_type:'dankal'
+													},
+													success: function(data) {
+														this.caseList = data.data.casesLst;
+														console.log(this.caseList,'mobile数据')
+													},
+													error: function(error) {
+														console.log(error)
+													},
+												});
+										}else if(b == 'program'){
+											$.ajax({
+													url: api + '/Website/casesList',
+													type: 'post',
+													// headers: {
+													// 	"token": configSELF.token,
+													// },
+													data: {
+														type: 'small',
+														case_type:'dankal'
+													},
+													success: function(data) {
+														this.caseList = data.data.casesLst;
+														console.log(this.caseList,'small数据')
+													},
+													error: function(error) {
+														console.log(error)
+													},
+												});
+										}else if(b == 'h5'){
+											$.ajax({
+													url: api + '/Website/casesList',
+													type: 'post',
+													// headers: {
+													// 	"token": configSELF.token,
+													// },
+													data: {
+														type: 'applet',
+														case_type:'dankal'
+													},
+													success: function(data) {
+														this.caseList = data.data.casesLst;
+														console.log(this.caseList,'applet数据')
+													},
+													error: function(error) {
+														console.log(error)
+													},
+												});
+										}
+
+
+
+
+
+									}
+});
+Vue.component("common-case", main);
+var main = new Vue({
+	el: "#main"
+});
+
+
+
+
+
+
+
+
+
+
+
 //尾部组件
 footer = Vue.extend({
 	template:` <div> <div class="box_center_two">

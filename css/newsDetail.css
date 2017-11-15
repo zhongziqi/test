@@ -1,6 +1,21 @@
-.white{
+#main .white{
     background: #fff!important;
 }
-.header a{
+#main .header a{
     color:#000!important;
+}
+#main .mainHeight{
+    min-height: 1650px;
+    width: 833px;
+    margin: 0 auto;
+    clear: both;
+    position: relative;
+} 
+#main .rotate{
+    width: 30px;
+    height: 40px;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 43px;
+    left: -29px;
 }

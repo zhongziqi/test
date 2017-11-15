@@ -1,142 +1,95 @@
-.bannerImg{
+#main_bg{
+    background: #fff!important;
+}
+#main_bg ul>li>a{
+    color: #000;
+}
+#main .bannerImg{
     margin-bottom: 120px;
 }
-.server{
-    width: 100%;
-
+#main .server{
+    width: 1000px;
+    margin: 0 auto;
+    margin-left: 249px;
 }
-.h5_title{
+#main .h5_title{
     width:100%;
-    height:42px; 
-    font-size:42px;
+    height:35px; 
+    font-size:35px;
     font-family:PingFangSC-Medium;
     color:rgba(51,51,51,1);
-    line-height:42px;
+    line-height:35px;
     text-align: center;
     margin-bottom: 25px;
-
 }
-.h5_detail{
+#main .h5_detail{
     width:100%;
     height:20px; 
-    font-size:14px;
+    font-size:12px;
     font-family:PingFangSC-Regular;
     color:rgba(51,51,51,1);
     line-height:20px;
     text-align: center;
     margin-bottom: 22px;
 }
-.h5_line{
+#main .h5_line{
     width:25px;
     height:2px;
     background: #F7D043;
     margin: 0 auto;
     margin-bottom: 55px;
 }
-
-.dankal_case{
-    margin-bottom: 81px!important;
-}
-.title_top{
-    height: 74px;
+#main .walle{
+    width: 100%;
+    height: 413px;
     position: relative;
 }
-.titiel_content{
-    width:173px;
-    height:42px; 
-    font-size:42px;
-    font-family:STHeiti;
-    color:rgba(51,51,51,1);
-    line-height:42px;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 416px;
+#main .walle .walle_bg{
+    /*width: 100%;*/
+    height: 85px;
+    background: url('../img/Apple TV.png') repeat-x;
+    margin-left: -111px;
 }
-.line_left{
-    width:89px;
-    height:1px; 
-    background:rgba(102,102,102,1);
-    position: absolute;
-    top: 21px;
-    left: 296px;
-}
-.line_right{
-    width:89px;
-    height:1px; 
-    background:rgba(102,102,102,1);
-    position: absolute;
-    top: 21px;
-    left: 616px;
-}
-.icon_box{
-    width: 100%;
-    text-align: center;
-}
-.icon_img{
-    width:30px;
-    height:30px; 
-    margin: 0 auto;
-}
-
-.all_case_box{
-    padding-left: 56px;
-    box-sizing: border-box;
-    margin-bottom: 81px;
-}
-.case_box{
-    width:190px;
-    height: 300px;
-    position: relative; 
-    float: left;
-    margin-right: 43px;
-}
-.case_img_Box{
-    width:190px;
-    height:178px;
+#main .txt_img{
+    width: 100px;
+    height: 115px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
 }
-.show_bg{
-    width:190px;
-    height:178px; 
-    background:rgba(255,255,255,0.9);
-    opacity:0.8;
-    position: absolute;
-    top: 0;
-    left: 0;
+#main .txt_img>img{
+    width: 75px;
+    height: 75px;
 }
-.the_title{
-    width:190px;
-    height:40px; 
-    font-size:17px;
-    font-family:PingFangSC-Semibold;
-    color:rgba(51,51,51,1);
-    line-height:20px;
-    margin-bottom: 17px;
-}
-.the_detail{
-    width:190px;
-    height:34px; 
-    font-size:9px;
+#main .txt_img>span{
+    width:82px;
+    height:15px; 
+    font-size:10px;
     font-family:PingFangSC-Regular;
-    color:rgba(102,102,102,1);
-    line-height:17px;
+    color:rgba(51,51,51,1);
+    line-height:15px;
 }
-.nothing{
-    width:190px;
-    height:178px;
+#main .one_position{
+     top: -76px;
+     left: 260px;
 }
-.get_more{
-    width:200px;
-    height:40px; 
-    background:rgba(247,208,67,1);
-    border-radius: 5px ; 
-    font-size:14px;
-    font-family:PingFangSC-Medium;
-    color:rgba(255,255,255,1);
-    line-height:40px;
-    text-align: center;
-    margin: 0 auto;
+#main .two_position{
+    top: 70px;
+    left: 480px;
+}
+#main .three_position{
+    top: -76px;
+    left: 700px;
+}
+#main .four_position{
+    top: 70px;
+    left: 926px;
+}
+#main .five_position{
+    top: -76px;
+    left: 1140px;
 }

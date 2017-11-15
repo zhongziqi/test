@@ -1,16 +1,16 @@
-.banner_box{
+#main .banner_box{
     width: 100%;
     height: auto;
     position: relative;
     margin-bottom: 86px;
 }
-.banner_img{
+#main .banner_img{
     width: 100%;
     height: 381px;
     background: url(../img/bg_5.png) no-repeat;
     background-size:100% auto; 
 }
-.banner_bg{
+#main .banner_bg{
     width: 100%;
     height: 59px;
     background: #000;
@@ -18,14 +18,14 @@
     bottom: 0;
     left: 0;
 }
-.title_top{
+#main .title_top1{
     height: 74px;
     position: absolute;
     top: 160px;
     left: 230px;
 
 }
-.titiel_content{
+#main .titiel_content1{
     width:173px;
     height:42px; 
     font-size:42px;
@@ -37,7 +37,7 @@
     top: 0;
     left: 416px;
 }
-.line_left{
+#main .line_left1{
     width:89px;
     height:1px; 
     background:rgba(102,102,102,1);
@@ -45,7 +45,7 @@
     top: 21px;
     left: 296px;
 }
-.line_right{
+#main .line_right1{
     width:89px;
     height:1px; 
     background:rgba(102,102,102,1);
@@ -53,54 +53,55 @@
     top: 21px;
     left: 616px;
 }
-.icon_img{
+#main .icon_img{
     width:30px;
     height:30px;  
     margin: 0 auto;
     color: #fff;
 }
-.icon_box{
+#main .icon_box{
     width: 100px;
     position: absolute;
     top: 216px;
     left: 672px;
     text-align: center;
 }
-.content_box{
+#main .content_box{
     min-height: 1650px;
+    position: relative;
 }
-.all_box{
+#main .all_box{
     width: 100%;
     height: 180px;
     box-shadow: 0px 2px 4px #888888;
     margin-bottom: 17px;
 }
-.img_box{
+#main .img_box{
     width: 240px;
     height: 180px;
     float: left;
 }
-.txt_box{
+#main .txt_box{
     width: 700px;
     float: left;
     padding-left: 27px;
     box-sizing: border-box;
     
 }
-.title_warp{
+#main .title_warp{
     width: 100%;
     padding-top: 20px;
     padding-bottom: 30px;
 
 }
-.title_list{
+#main .title_list{
     height:20px; 
     font-size:20px;
     font-family:PingFangSC-Medium;
     color:rgba(51,51,51,1);
     line-height:21px;
 }
-.title_time{
+#main .title_time{
     height:15px; 
     font-size:12px;
     font-family:PingFangSC-Light;
@@ -108,12 +109,29 @@
     line-height:15px;
     float: right;
 }
-.content{
+#main .content{
     font-size:16px;
     font-family:PingFangSC-Regular;
     color:rgba(74,74,74,1);
     line-height:26px;
 }
-.all_box:hover{
+#main .all_box{
+    border: 6px solid transparent;
+}
+#main .all_box:hover{
     border:6px solid #F7D043;
+}
+#main .btn_box{
+    height: 50px;
+    position: absolute;
+    bottom: 76px;
+    right: -60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#main .btn_box>img{
+    width: 20px;
+    height: 20px;
 }

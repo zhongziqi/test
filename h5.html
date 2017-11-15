@@ -1,21 +1,54 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>深圳市蛋壳创意科技有限公司</title>
     <link rel="stylesheet" href="css/h5.css">
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/swiper.min.css">
     <script type="text/javascript" src='js/vue.js'></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- 头部 -->
-    <header id='header' class="header">
-      <common-header></common-header>
-    </header>
+    <div class="header" id="main_bg">
+        <div class="box_center clear">
+            <div class="fl">
+                <img src="img/logo_black.png" alt="">
+            </div>
+            <div class="fr">
+                <ul class='clear'>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">客户案例</a></li>
+                    <li>
+                        <a href="#">技术服务</a>
+                        <b class="b2"></b>
+                        <div class="dev_type">
+                            <ul class="clear">
+                                <li @click='service_click(0)'>
+                                    <a class="font_color" href="#"><img src="img/ic_phone.png" alt=""><span>App开发</span></a><b></b></li>
+                                <li @click='service_click(1)'>
+                                    <a class="font_color" href="#"><img src="img/ic_web_copy_4.png" alt=""><span>小程序开发</span></a><b></b></li>
+                                <li @click='service_click(2)'>
+                                    <a class="font_color" href="#"><img src="img/ic_web.png" alt=""><span>网站定制</span></a><b></b></li>
+                                <li @click='service_click(3)'>
+                                    <a class="font_color" href="#"><img src="img/ic_h5.png" alt=""><span>H5&手机网页</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">行业新闻</a></li>
+                    <li><a href="#">我要定制</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <!-- 主体类型 -->
     <!-- 主体类型 -->
-    <main>
+    <main id="main">
         <!--banner图-->
         <div class="bannerImg">
             <img src="img/b3_ copy.png" class="img_cover" alt="">
@@ -24,129 +57,49 @@
         <div class="server">
             <h3 class="h5_title">H5服务特色</h3>
             <p class="h5_detail">直击企业痛点，让企业营销轻而易举</p>
-            <div class="h5_line"></div>
+            <div class="h5_line"></div>       
         </div>
-       
-        <!--蛋壳案列-->
-        <div class="box_center dankal_case">
-            <div class="box_center title_top">
-                <span class="titiel_content">蛋壳案例</span>
-                <div class="line_left"></div>
-                <div class="line_right"></div>
-            </div>
-            <div class="icon_box">
-                <img src="img/ic_case.png" alt="" class="icon_img">
-            </div>
-            <!--案例的集合-->
-            <div class="box_center clear all_case_box ">
-                <div class="case_box">
-                    <!--图片-->
-                    <div class="case_img_Box">
-                        <img class="img_cover" style="display: block;" src="img/Artboard 6.png" alt="">
-                    </div>
-                    <div class="nothing"></div>
-                    <!--阴影-->
-                    <div class="show_bg"></div>
-                    <!--文字-->
-                    <p class="the_title ellipsis_2">顺丰同城 | 跨界营销打入年轻消费市场 —— 热门 IP 合作</p>
-                    <p class="the_detail ellipsis_2">越来越多的著名品牌，开始借助“跨界”营销，寻求强强联合的品牌协同效应。每个动漫IP内容有了形象的故事，在此基础 […]</p>
-                </div>
-                 <div class="case_box">
-                    <!--图片-->
-                    <div class="case_img_Box">
-                        <img class="img_cover" style="display: block;" src="img/Artboard 6.png" alt="">
-                    </div>
-                    <div class="nothing"></div>
-                    <!--阴影-->
-                    <div class="show_bg"></div>
-                    <!--文字-->
-                    <p class="the_title ellipsis_2">顺丰同城 | 跨界营销打入年轻消费市场 —— 热门 IP 合作</p>
-                    <p class="the_detail ellipsis_2">越来越多的著名品牌，开始借助“跨界”营销，寻求强强联合的品牌协同效应。每个动漫IP内容有了形象的故事，在此基础 […]</p>
-                </div>
-                 <div class="case_box">
-                    <!--图片-->
-                    <div class="case_img_Box">
-                        <img class="img_cover" style="display: block;" src="img/Artboard 6.png" alt="">
-                    </div>
-                    <div class="nothing"></div>
-                    <!--阴影-->
-                    <div class="show_bg"></div>
-                    <!--文字-->
-                    <p class="the_title ellipsis_2">顺丰同城 | 跨界营销打入年轻消费市场 —— 热门 IP 合作</p>
-                    <p class="the_detail ellipsis_2">越来越多的著名品牌，开始借助“跨界”营销，寻求强强联合的品牌协同效应。每个动漫IP内容有了形象的故事，在此基础 […]</p>
-                </div>
-                 <div class="case_box">
-                    <!--图片-->
-                    <div class="case_img_Box">
-                        <img class="img_cover" style="display: block;" src="img/Artboard 6.png" alt="">
-                    </div>
-                    <div class="nothing"></div>
-                    <!--阴影-->
-                    <div class="show_bg"></div>
-                    <!--文字-->
-                    <p class="the_title ellipsis_2">顺丰同城 | 跨界营销打入年轻消费市场 —— 热门 IP 合作</p>
-                    <p class="the_detail ellipsis_2">越来越多的著名品牌，开始借助“跨界”营销，寻求强强联合的品牌协同效应。每个动漫IP内容有了形象的故事，在此基础 […]</p>
-                </div>
-                 <div class="case_box">
-                    <!--图片-->
-                    <div class="case_img_Box">
-                        <img class="img_cover" style="display: block;" src="img/Artboard 6.png" alt="">
-                    </div>
-                    <div class="nothing"></div>
-                    <!--阴影-->
-                    <div class="show_bg"></div>
-                    <!--文字-->
-                    <p class="the_title ellipsis_2">顺丰同城 | 跨界营销打入年轻消费市场 —— 热门 IP 合作</p>
-                    <p class="the_detail ellipsis_2">越来越多的著名品牌，开始借助“跨界”营销，寻求强强联合的品牌协同效应。每个动漫IP内容有了形象的故事，在此基础 […]</p>
-                </div>
-                 <div class="case_box">
-                    <!--图片-->
-                    <div class="case_img_Box">
-                        <img class="img_cover" style="display: block;" src="img/Artboard 6.png" alt="">
-                    </div>
-                    <div class="nothing"></div>
-                    <!--阴影-->
-                    <div class="show_bg"></div>
-                    <!--文字-->
-                    <p class="the_title ellipsis_2">顺丰同城 | 跨界营销打入年轻消费市场 —— 热门 IP 合作</p>
-                    <p class="the_detail ellipsis_2">越来越多的著名品牌，开始借助“跨界”营销，寻求强强联合的品牌协同效应。每个动漫IP内容有了形象的故事，在此基础 […]</p>
-                </div>
-                 <div class="case_box">
-                    <!--图片-->
-                    <div class="case_img_Box">
-                        <img class="img_cover" style="display: block;" src="img/Artboard 6.png" alt="">
-                    </div>
-                    <div class="nothing"></div>
-                    <!--阴影-->
-                    <div class="show_bg"></div>
-                    <!--文字-->
-                    <p class="the_title ellipsis_2">顺丰同城 | 跨界营销打入年轻消费市场 —— 热门 IP 合作</p>
-                    <p class="the_detail ellipsis_2">越来越多的著名品牌，开始借助“跨界”营销，寻求强强联合的品牌协同效应。每个动漫IP内容有了形象的故事，在此基础 […]</p>
-                </div>
-                 <div class="case_box">
-                    <!--图片-->
-                    <div class="case_img_Box">
-                        <img class="img_cover" style="display: block;" src="img/Artboard 6.png" alt="">
-                    </div>
-                    <div class="nothing"></div>
-                    <!--阴影-->
-                    <div class="show_bg"></div>
-                    <!--文字-->
-                    <p class="the_title ellipsis_2">顺丰同城 | 跨界营销打入年轻消费市场 —— 热门 IP 合作</p>
-                    <p class="the_detail ellipsis_2">越来越多的著名品牌，开始借助“跨界”营销，寻求强强联合的品牌协同效应。每个动漫IP内容有了形象的故事，在此基础 […]</p>
-                </div>               
-            </div>         
+         <div class="walle">
+             <div class="walle_bg">
+             </div>
+             <div class="txt_img one_position">
+                <img src="img/ic_feature1.png" alt="">
+                <span>企业的形象提升</span>
+             </div>
+             <div class="txt_img two_position">
+                <span>企业的形象提升</span>
+                <img src="img/ic_feature4.png" alt="">
+                
+             </div>
+             <div class="txt_img three_position">
+                <img src="img/ic_featur2.png" alt="">
+                <span>企业的形象提升</span>
+             </div>
+             <div class="txt_img four_position">
+                <span>企业的形象提升</span>
+                <img src="img/ic_feature5.png" alt="">
+             </div>
+             <div class="txt_img five_position">
+                <img src="img/ic_feature3.png" alt="">
+                <span>企业的形象提升</span>
+             </div>
+             
+
         </div>
-         <!--加载更多-->
+
+         <!--蛋壳案列-->
+        <common-case></common-case>
+        <!--加载更多-->
         <div class="get_more">更多</div>
     </main>
     <!-- 尾部 -->
     <footer id="footer" class="footer clear">
-      <common-footer></common-footer>
+        <common-footer></common-footer>
     </footer>
-  </body>
-  <script type="text/javascript" src='js/jquery-3.1.1.min.js'></script>
-  <script type="text/javascript" src='js/swiper.min.js'></script>
-  <script type="text/javascript" src="js/vueComponent.js?ver=1.0"></script>
-  <script type="text/javascript" src='js/index.js'></script>
+</body>
+<script type="text/javascript" src='js/jquery-3.1.1.min.js'></script>
+<script type="text/javascript" src='js/swiper.min.js'></script>
+<script type="text/javascript" src="js/vueComponent.js?ver=1.0"></script>
+<script type="text/javascript" src='js/index.js'></script>
+
 </html>
