@@ -14,10 +14,14 @@
       <common-header></common-header>
     </header>
     <!-- 主体类型 -->
-   <main class="mainHeight" id="main"> 
-     <div>
-       <img class="rotate" src="img/ic_next_gray.png" alt="">
-     </div> 
+   <main class="box_center mainHeight" id="detail_page"> 
+      <div>
+        <img class="rotate" src="img/ic_next_gray.png" alt="" @click="goBack">
+      </div>
+      <p class="the_title">{{artical.title}}</p>
+      <p class="the_time">{{artical.create_time}} by Dankal</p>
+      <div class="yellow_line"></div>
+      <div v-html="artical.content"></div>
 
    </main>
     <!-- 尾部 -->
@@ -28,6 +32,6 @@
   <script type="text/javascript" src='js/jquery-3.1.1.min.js'></script>
   <script type="text/javascript" src='js/swiper.min.js'></script>
   <script type="text/javascript" src="js/vueComponent.js?ver=1.0"></script>
-  <script type="text/javascript" src='js/index.js'></script>
+  <script type="text/javascript" src='js/newsDetail.js'></script>
 </html>
  

@@ -1,4 +1,5 @@
 
+var api = 'http://big.dankal.cn/api';
 
 //验证手机号码
 function checkPhone(mobile) {
@@ -7,7 +8,7 @@ function checkPhone(mobile) {
 	}
 }
 
-//获取链接中的参数
+//获取链接中的参数 
 function getUrlParam(name) {
 	// 获取当前地址链接
     var url = window.location.search;
@@ -86,8 +87,6 @@ function clearCookie(name) {
 
 
 
-
-
 //头部组件
 header = Vue.extend({
 	template:`      <div class="box_center clear">
@@ -135,7 +134,7 @@ var header = new Vue({
 
 //蛋壳案例
 main = Vue.extend({
-	template:`      <div class="box_center dankal_case">
+	template:`<div class="box_center dankal_case">
             <div class="box_center title_top">
                 <span class="titiel_content">蛋壳案例</span>
                 <div class="line_left"></div>
@@ -146,9 +145,9 @@ main = Vue.extend({
             </div>
             <!--案例的集合-->
             <div class="box_center clear all_case_box "> 
-                <div class="case_box" v-for="(item,index) in caseList" :key="index">
+                <div class="case_box" v-for="(item,index) in caseList" @click.stop='test(item.c_id)'>
                     <!--图片-->
-                    <div class="case_img_Box">
+                    <div class="case_img_Box" >
                         <img class="img_cover" style="display: block;" :src="item.img_url" alt="">
                     </div>
                     <div class="nothing"></div>
@@ -166,17 +165,18 @@ main = Vue.extend({
 										}
 									},
 									methods:{
-										service_click:function(e){
-
+										test:function(val){
+											console.log('aaa')
+											window.location.href='detail.html?c_id='+val
 										}
 									},
 									created(){
-										let api = 'http://big.dankal.cn/api';
+										
 										// 判断是那个页面
 										let url = window.location.href;
 										let a = url.split("test/")[1];
 										let b = a.split('.')[0];
-
+										let that = this;
 										if(b == 'app'){
 												$.ajax({
 													url: api + '/Website/casesList',
@@ -189,8 +189,8 @@ main = Vue.extend({
 														case_type:'dankal'
 													},
 													success: function(data) {
-														this.caseList = data.data.casesLst;
-														console.log(this.caseList,'app数据')
+														that.caseList = data.data.casesLst;
+														console.log(that.caseList,'app数据')
 													},
 													error: function(error) {
 														console.log(error)
@@ -208,8 +208,8 @@ main = Vue.extend({
 														case_type:'dankal'
 													},
 													success: function(data) {
-														this.caseList = data.data.casesLst;
-														console.log(this.caseList,'mobile数据')
+														that.caseList = data.data.casesLst;
+														console.log(that.caseList,'mobile数据')
 													},
 													error: function(error) {
 														console.log(error)
@@ -227,8 +227,8 @@ main = Vue.extend({
 														case_type:'dankal'
 													},
 													success: function(data) {
-														this.caseList = data.data.casesLst;
-														console.log(this.caseList,'small数据')
+														that.caseList = data.data.casesLst;
+														console.log(that.caseList,'small数据')
 													},
 													error: function(error) {
 														console.log(error)
@@ -246,8 +246,8 @@ main = Vue.extend({
 														case_type:'dankal'
 													},
 													success: function(data) {
-														this.caseList = data.data.casesLst;
-														console.log(this.caseList,'applet数据')
+														that.caseList = data.data.casesLst;
+														console.log(that.caseList,'applet数据')
 													},
 													error: function(error) {
 														console.log(error)
@@ -265,13 +265,6 @@ Vue.component("common-case", main);
 var main = new Vue({
 	el: "#main"
 });
-
-
-
-
-
-
-
 
 
 
@@ -312,7 +305,7 @@ var footer = new Vue({
 
 
 
-<!-- 联系我们 -->
+//  联系我们 
 contact = Vue.extend({
 	template:`<div class="contact">
 		<div class="inputs">
