@@ -1,0 +1,41 @@
+/*关于我们页面主体部分*/
+.section .about_page{width: 100%;}
+.section .box_center{text-align: center;}
+.section .box_center>img{margin-top: 100px;margin-bottom: 37px;}
+.section .box_center>p{word-spacing: 1.5px;line-height: 40px;color: #666;position: relative;}
+.section .box_center>p>b{position: absolute;display: inline-block;width: 25px;height: 2px;background: #F7D043 ;bottom: -10px;left:0;right:0;margin-left: auto;margin-right: auto;}
+.swiper-container {width: 910px;height: 683px;margin-top: 70px;}
+.initial_container{position: relative;}
+.last{position: absolute;top: 280px;left: -124px;width: 98px;}
+.next{position: absolute;top: 280px;right: -124px;width: 98px;}
+.contact_us{width: 100%;margin-top: 100px;}
+#container {width:1000px;height:450px;margin-left: auto;margin-right: auto;margin-top: 25px;}
+#container img{width: 100px;height: 100px;}
+.company_process {margin-top: 112px;position: relative;}
+.company_process img{width: 100%;height: 898px;object-fit: cover;}
+.company_process .cover{position: absolute;top: 450px;left:0;right: 0;}
+.company_process .cover img{height: 60px;margin-top: 0!important;margin-bottom: 0!important;}
+.map{position: relative;}
+.map_cover{position: absolute;bottom: 18px;right: 192px;}
+/*众多品牌*/
+.all_progress p{color: #fff;font-size: 14px;}
+.dk_logo>img{width: 43px!important;height: 28px!important;}
+.dk_logo{position: absolute;top: -50px;left: -35px;}
+.vanke_logo>img{width: 68px!important;height: 16px!important;}
+.vanke_logo{position: absolute;bottom:-44px;left: 70px;}
+.mengniu_logo>img{width: 68px!important;height: 16px!important;}
+.mengniu_logo{position: absolute;top:-40px;left: 165px;}
+.bank_logo>img{width: 68px!important;height: 38px!important;}
+.bank_logo{position: absolute;bottom:-60px;left: 260px;}
+.sf_logo>img{width: 68px!important;height: 47px!important;}
+.sf_logo{position: absolute;top:-66px;left: 365px;}
+.people_logo>img{width: 68px!important;height: 38px!important;}
+.people_logo{position: absolute;bottom:-60px;left: 464px;}
+.house_logo>img{width: 68px!important;height: 47px!important;}
+.house_logo{position: absolute;top:-66px;left: 560px;}
+.icbc_logo>img{width: 68px!important;height: 38px!important;}
+.icbc_logo{position: absolute;bottom:-60px;left: 657px;}
+.zhou_logo>img{width: 68px!important;height: 47px!important;}
+.zhou_logo{position: absolute;top:-66px;left: 756px;}
+.forward_logo>img{width: 68px!important;height: 50px!important;}
+.forward_logo{position: absolute;bottom:-70px;left: 836px;}

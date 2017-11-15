@@ -163,3 +163,41 @@ Vue.component("common-footer", footer);
 var footer = new Vue({
 	el: "#footer"
 });
+
+
+
+
+
+<!-- 联系我们 -->
+contact = Vue.extend({
+	template:`<div class="contact">
+		<div class="inputs">
+			<div class="name_numbers clear">
+				<input type="text" name="" value="" placeholder="*姓名">
+				<input type="text" name="" value="" placeholder="*联系电话">
+			</div>
+			<div class="clear mail_type">
+					<input type="text" name="" value="" placeholder="邮箱">
+					<select>
+						<option selected="selected">*开发类型</option>
+						<option>Mercedes</option>
+						<option>Audi</option>
+					</select>
+			</div>
+			<div class="company_name">
+				<input type="text" name="" value="" placeholder="公司名称">
+			</div>
+			<div class="textarea">
+				<textarea name="name" placeholder="可填写您的行业和您的具体需求描述，方便我们更精准地了解您的需求，我们会及时联系您，谢谢..."></textarea>
+			</div>
+			<div class="submit">
+				提交
+			</div>
+		</div>
+	</div>
+`,
+});
+Vue.component("common-contact", contact);
+var contact = new Vue({
+	el: "#contact"
+});
