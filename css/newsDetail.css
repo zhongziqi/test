@@ -1,21 +1,50 @@
-#main .white{
+#detail_page .white{
     background: #fff!important;
 }
-#main .header a{
+#detail_page .header a{
     color:#000!important;
 }
-#main .mainHeight{
+.mainHeight{
+
     min-height: 1650px;
     width: 833px;
     margin: 0 auto;
     clear: both;
+    margin-top: 157px!important;
     position: relative;
 } 
-#main .rotate{
+#detail_page .rotate{
     width: 30px;
     height: 40px;
     transform: rotate(90deg);
     position: absolute;
-    top: 43px;
+    top: -77px;
     left: -29px;
 }
+#detail_page .the_title{
+    width: 100%;
+    text-align: center;
+    height:30px; 
+    font-size:30px;
+    font-family:PingFangSC-Medium;
+    color:rgba(51,51,51,1);
+    line-height:31px;
+    margin-bottom: 18px;
+}
+#detail_page .the_time{
+    width: 100%;
+    text-align: center;
+    height:14px; 
+    font-size:12px;
+    font-family:PingFangSC-Light;
+    color:rgba(102,102,102,1);
+    line-height:14px;
+    margin-bottom: 30px;
+}
+#detail_page .yellow_line{
+    width: 100%;
+    height: 1px;
+    border-top:1px solid #F7D043;
+    margin-bottom: 41px;
+}
+

@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>深圳市蛋壳创意科技有限公司</title>
     <link rel="stylesheet" href="css/industry.css">
     <link rel="stylesheet" href="css/public.css">
-    <script type="text/javascript" src='js/jquery-3.1.1.min.js'></script>
     <script type="text/javascript" src='js/vue.js'></script>
-    <script type="text/javascript" src='js/app.js'></script>
 </head> 
-
 <body>
     <header id='header' class="header">
         <common-header></common-header>
     </header>
-
-<!-- 主体类型 -->
-    <main id="main">
+        <div id="contact" style="display: none"></div>
+    <!-- 主体类型 -->
+    <div id="main_box">
         <!--banner图-->
         <div class="banner_box">
             <div class="banner_img">
@@ -38,124 +34,30 @@
                 <img src="img/ic_last_gray.png" alt="">
                 <img src="img/ic_next_gray.png" alt="">
             </div>
-            <div>
-                <img src="img" alt="">
-            </div>
-            <div class="all_box clear">
+         
+            <div class="all_box clear" v-for="item in news"  @click="pass({new_id:item.new_id})">
                 <div class="img_box">
-                    <img class="img_cover" src="img/APP_Copy.png" alt="">
+                    <img class="img_cover" :src="item.img_url" alt="">
                 </div>
                 <div class="txt_box">
                     <div class="title_warp clear">
-                        <span class="title_list">【蛋壳科技】 热列庆祝蛋壳创意科技乔迁之喜</span>
-                        <span class="title_time">2017-08-09 by Dankal</span>
-                    </div>
-                    <p class="content ellipsis_3">蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜。蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜，蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜…</p>
-                </div>
-            </div>
-             <div class="all_box clear">
-                <div class="img_box">
-                    <img class="img_cover" src="img/APP_Copy.png" alt="">
-                </div>
-                <div class="txt_box">
-                    <div class="title_warp clear">
-                        <span class="title_list">【蛋壳科技】 热列庆祝蛋壳创意科技乔迁之喜</span>
-                        <span class="title_time">2017-08-09 by Dankal</span>
-                    </div>
-                    <p class="content ellipsis_3">蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜。蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜，蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜…</p>
-                </div>
-            </div>
-             <div class="all_box clear">
-                <div class="img_box">
-                    <img class="img_cover" src="img/APP_Copy.png" alt="">
-                </div>
-                <div class="txt_box">
-                    <div class="title_warp clear">
-                        <span class="title_list">【蛋壳科技】 热列庆祝蛋壳创意科技乔迁之喜</span>
-                        <span class="title_time">2017-08-09 by Dankal</span>
-                    </div>
-                    <p class="content ellipsis_3">蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜。蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜，蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜…</p>
-                </div>
-            </div>
-             <div class="all_box clear">
-                <div class="img_box">
-                    <img class="img_cover" src="img/APP_Copy.png" alt="">
-                </div>
-                <div class="txt_box">
-                    <div class="title_warp clear">
-                        <span class="title_list">【蛋壳科技】 热列庆祝蛋壳创意科技乔迁之喜</span>
-                        <span class="title_time">2017-08-09 by Dankal</span>
-                    </div>
-                    <p class="content ellipsis_3">蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜。蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜，蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜…</p>
-                </div>
-            </div>
-             <div class="all_box clear">
-                <div class="img_box">
-                    <img class="img_cover" src="img/APP_Copy.png" alt="">
-                </div>
-                <div class="txt_box">
-                    <div class="title_warp clear">
-                        <span class="title_list">【蛋壳科技】 热列庆祝蛋壳创意科技乔迁之喜</span>
-                        <span class="title_time">2017-08-09 by Dankal</span>
-                    </div>
-                    <p class="content ellipsis_3">蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜。蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜，蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜…</p>
-                </div>
-            </div>
-             <div class="all_box clear">
-                <div class="img_box">
-                    <img class="img_cover" src="img/APP_Copy.png" alt="">
-                </div>
-                <div class="txt_box">
-                    <div class="title_warp clear">
-                        <span class="title_list">【蛋壳科技】 热列庆祝蛋壳创意科技乔迁之喜</span>
-                        <span class="title_time">2017-08-09 by Dankal</span>
-                    </div>
-                    <p class="content ellipsis_3">蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜。蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜，蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜…</p>
-                </div>
-            </div>
-             <div class="all_box clear">
-                <div class="img_box">
-                    <img class="img_cover" src="img/APP_Copy.png" alt="">
-                </div>
-                <div class="txt_box">
-                    <div class="title_warp clear">
-                        <span class="title_list">【蛋壳科技】 热列庆祝蛋壳创意科技乔迁之喜</span>
-                        <span class="title_time">2017-08-09 by Dankal</span>
-                    </div>
-                    <p class="content ellipsis_3">蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜。蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜，蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜…</p>
-                </div>
-            </div>
-             <div class="all_box clear">
-                <div class="img_box">
-                    <img class="img_cover" src="img/APP_Copy.png" alt="">
-                </div>
-                <div class="txt_box">
-                    <div class="title_warp clear">
-                        <span class="title_list">【蛋壳科技】 热列庆祝蛋壳创意科技乔迁之喜</span>
-                        <span class="title_time">2017-08-09 by Dankal</span>
+                        <span class="title_list">{{item.title}}</span>
+                        <span class="title_time">{{item.create_time}} by Dankal</span>
                     </div>
                     <p class="content ellipsis_3">蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜。蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜，蛋壳科技有限公司乔迁于本周星期三，热列庆祝蛋壳创意科技乔迁之喜…</p>
                 </div>
             </div>
         </div>
      
-    </main>
-
-
-
-
-
-
-
+    </div>
 
      <!-- 尾部 -->
     <footer id="footer" class="footer clear">
       <common-footer></common-footer>
     </footer>
-  </body>
+</body>
   <script type="text/javascript" src='js/jquery-3.1.1.min.js'></script>
   <script type="text/javascript" src='js/swiper.min.js'></script>
   <script type="text/javascript" src="js/vueComponent.js?ver=1.0"></script>
-  <script type="text/javascript" src='js/index.js'></script>
-
+  <script type="text/javascript" src='js/industry.js'></script>
 </html>
