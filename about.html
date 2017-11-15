@@ -26,18 +26,18 @@
         <div class="initial_container">
           <div class="swiper-container arrow_initial_container">
               <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="img/b3_ copy.png" alt=""> </div>
-                  <div class="swiper-slide"><img src="img/b3_ copy.png" alt=""> </div>
-                  <div class="swiper-slide"><img src="img/b3_ copy.png" alt=""> </div>
+                  <div class="swiper-slide" v-for='item in introduct_box'><img :src="item.img_url" alt=""> </div>
+                  <!-- <div class="swiper-slide"><img src="img/b3_ copy.png" alt=""> </div>
+                  <div class="swiper-slide"><img src="img/b3_ copy.png" alt=""> </div> -->
               </div>
               <!-- 如果需要分页器 -->
               <div class="swiper-pagination"></div>
               <!-- 如果需要导航按钮 -->
-              <div class="swiper-button-prev" style="display:none;"></div>
-              <div class="swiper-button-next" style="display:none;"></div>
+              <div ref='prev' class="swiper-button-prev" style="display:none;"></div>
+              <div ref='next' class="swiper-button-next" style="display:none;"></div>
           </div>
-          <img class="last" src="img/ic_last.png" alt="">
-          <img class="next" src="img/ic_next.png" alt="">
+          <img @click='prev_click()' class="last" src="img/ic_last.png" alt="">
+          <img @click='next_click()'class="next" src="img/ic_next.png" alt="">
         </div>
       </div>
       <!-- 公司发展历程 -->
@@ -104,6 +104,9 @@
         <div id="container"></div>
         <img class="map_cover" src="img/map_cover.png" alt="">
       </div>
+
+    </section>
+    <section class="section">
       <!-- 联系我们 -->
       <div id='contact' class="contact">
         <common-contact></common-contact>

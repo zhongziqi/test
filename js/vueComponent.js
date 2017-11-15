@@ -1,4 +1,4 @@
-
+var api = 'http://big.dankal.cn/'
 
 //验证手机号码
 function checkPhone(mobile) {
@@ -6,7 +6,12 @@ function checkPhone(mobile) {
 		return false;
 	}
 }
-
+// 验证邮箱
+function checkMail(mail){
+	if(!(/[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/.test(mail))){
+		return false;
+	}
+}
 //获取链接中的参数
 function getUrlParam(name) {
 	// 获取当前地址链接
@@ -96,23 +101,23 @@ header = Vue.extend({
 	    	            </div>
 	    	            <div class="fr">
 	    	              <ul class='clear'>
-	    	                <li><a href="#">首页</a></li>
-	    	                <li><a href="#">客户案例</a></li>
+	    	                <li><a href="index.html">首页</a></li>
+	    	                <li><a href="index.html?type=customer_case">客户案例</a></li>
 	    	                <li>
 	    	                  <a href="#">技术服务</a>
 	    	                  <b class="b2"></b>
 	    	                  <div class="dev_type">
 	                            <ul class="clear">
-	                              <li @click='service_click(0)'><a class="font_color" href="#"><img src="img/ic_phone.png" alt=""><span>App开发</span></a><b></b></li>
-	                              <li @click='service_click(1)'><a class="font_color" href="#"><img src="img/ic_web_copy_4.png" alt=""><span>小程序开发</span></a><b></b></li>
-	                              <li @click='service_click(2)'><a class="font_color" href="#"><img src="img/ic_web.png" alt=""><span>网站定制</span></a><b></b></li>
-	                              <li @click='service_click(3)'><a class="font_color" href="#"><img src="img/ic_h5.png" alt=""><span>H5&手机网页</span></a></li>
+	                              <li @click='service_click(0)'><a class="font_color" href="app.html"><img src="img/ic_phone.png" alt=""><span>App开发</span></a><b></b></li>
+	                              <li @click='service_click(1)'><a class="font_color" href="program.html"><img src="img/ic_web_copy_4.png" alt=""><span>小程序开发</span></a><b></b></li>
+	                              <li @click='service_click(2)'><a class="font_color" href="h5.html"><img src="img/ic_web.png" alt=""><span>网站定制</span></a><b></b></li>
+	                              <li @click='service_click(3)'><a class="font_color" href="phone.html"><img src="img/ic_h5.png" alt=""><span>H5&手机网页</span></a></li>
 	                            </ul>
 	    										</div>
 	    	                </li>
-	    	                <li><a href="#">行业新闻</a></li>
-	    	                <li><a href="#">我要定制</a></li>
-	    	                <li><a href="#">关于我们</a></li>
+	    	                <li><a href="industry.html">行业新闻</a></li>
+	    	                <li><a href="index.html?type=initial_custom">我要定制</a></li>
+	    	                <li><a href="about.html">关于我们</a></li>
 	    	              </ul>
 	    	            </div>
 	    	          </div>`,
@@ -145,7 +150,7 @@ main = Vue.extend({
                 <img src="img/ic_case.png" alt="" class="icon_img">
             </div>
             <!--案例的集合-->
-            <div class="box_center clear all_case_box "> 
+            <div class="box_center clear all_case_box ">
                 <div class="case_box" v-for="(item,index) in caseList" :key="index">
                     <!--图片-->
                     <div class="case_img_Box">
@@ -158,7 +163,7 @@ main = Vue.extend({
                     <p class="the_title ellipsis_2">顺丰同城 | 跨界营销打入年轻消费市场 —— 热门 IP 合作</p>
                     <p class="the_detail ellipsis_2">越来越多的著名品牌，开始借助“跨界”营销，寻求强强联合的品牌协同效应。每个动漫IP内容有了形象的故事，在此基础 […]</p>
                 </div>
-            </div>         
+            </div>
         </div>`,
 									data:function(){
 										return{
@@ -171,93 +176,93 @@ main = Vue.extend({
 										}
 									},
 									created(){
-										let api = 'http://big.dankal.cn/api';
-										// 判断是那个页面
-										let url = window.location.href;
-										let a = url.split("test/")[1];
-										let b = a.split('.')[0];
-
-										if(b == 'app'){
-												$.ajax({
-													url: api + '/Website/casesList',
-													type: 'post',
-													// headers: {
-													// 	"token": configSELF.token,
-													// },
-													data: {
-														type: 'web',
-														case_type:'dankal'
-													},
-													success: function(data) {
-														this.caseList = data.data.casesLst;
-														console.log(this.caseList,'app数据')
-													},
-													error: function(error) {
-														console.log(error)
-													},
-												});
-										}else if(b == 'phone'){
-												$.ajax({
-													url: api + '/Website/casesList',
-													type: 'post',
-													// headers: {
-													// 	"token": configSELF.token,
-													// },
-													data: {
-														type: 'mobile',
-														case_type:'dankal'
-													},
-													success: function(data) {
-														this.caseList = data.data.casesLst;
-														console.log(this.caseList,'mobile数据')
-													},
-													error: function(error) {
-														console.log(error)
-													},
-												});
-										}else if(b == 'program'){
-											$.ajax({
-													url: api + '/Website/casesList',
-													type: 'post',
-													// headers: {
-													// 	"token": configSELF.token,
-													// },
-													data: {
-														type: 'small',
-														case_type:'dankal'
-													},
-													success: function(data) {
-														this.caseList = data.data.casesLst;
-														console.log(this.caseList,'small数据')
-													},
-													error: function(error) {
-														console.log(error)
-													},
-												});
-										}else if(b == 'h5'){
-											$.ajax({
-													url: api + '/Website/casesList',
-													type: 'post',
-													// headers: {
-													// 	"token": configSELF.token,
-													// },
-													data: {
-														type: 'applet',
-														case_type:'dankal'
-													},
-													success: function(data) {
-														this.caseList = data.data.casesLst;
-														console.log(this.caseList,'applet数据')
-													},
-													error: function(error) {
-														console.log(error)
-													},
-												});
-										}
-
-
-
-
+										// let api = 'http://big.dankal.cn/api';
+										// // 判断是那个页面
+										// let url = window.location.href;
+										// let a = url.split("test/")[1];
+										// let b = a.split('.')[0];
+                    //
+										// if(b == 'app'){
+										// 		$.ajax({
+										// 			url: api + '/Website/casesList',
+										// 			type: 'post',
+										// 			// headers: {
+										// 			// 	"token": configSELF.token,
+										// 			// },
+										// 			data: {
+										// 				type: 'web',
+										// 				case_type:'dankal'
+										// 			},
+										// 			success: function(data) {
+										// 				this.caseList = data.data.casesLst;
+										// 				console.log(this.caseList,'app数据')
+										// 			},
+										// 			error: function(error) {
+										// 				console.log(error)
+										// 			},
+										// 		});
+										// }else if(b == 'phone'){
+										// 		$.ajax({
+										// 			url: api + '/Website/casesList',
+										// 			type: 'post',
+										// 			// headers: {
+										// 			// 	"token": configSELF.token,
+										// 			// },
+										// 			data: {
+										// 				type: 'mobile',
+										// 				case_type:'dankal'
+										// 			},
+										// 			success: function(data) {
+										// 				this.caseList = data.data.casesLst;
+										// 				console.log(this.caseList,'mobile数据')
+										// 			},
+										// 			error: function(error) {
+										// 				console.log(error)
+										// 			},
+										// 		});
+										// }else if(b == 'program'){
+										// 	$.ajax({
+										// 			url: api + '/Website/casesList',
+										// 			type: 'post',
+										// 			// headers: {
+										// 			// 	"token": configSELF.token,
+										// 			// },
+										// 			data: {
+										// 				type: 'small',
+										// 				case_type:'dankal'
+										// 			},
+										// 			success: function(data) {
+										// 				this.caseList = data.data.casesLst;
+										// 				console.log(this.caseList,'small数据')
+										// 			},
+										// 			error: function(error) {
+										// 				console.log(error)
+										// 			},
+										// 		});
+										// }else if(b == 'h5'){
+										// 	$.ajax({
+										// 			url: api + '/Website/casesList',
+										// 			type: 'post',
+										// 			// headers: {
+										// 			// 	"token": configSELF.token,
+										// 			// },
+										// 			data: {
+										// 				type: 'applet',
+										// 				case_type:'dankal'
+										// 			},
+										// 			success: function(data) {
+										// 				this.caseList = data.data.casesLst;
+										// 				console.log(this.caseList,'applet数据')
+										// 			},
+										// 			error: function(error) {
+										// 				console.log(error)
+										// 			},
+										// 		});
+										// }
+                    //
+                    //
+                    //
+                    //
 
 									}
 });
@@ -265,16 +270,6 @@ Vue.component("common-case", main);
 var main = new Vue({
 	el: "#main"
 });
-
-
-
-
-
-
-
-
-
-
 
 //尾部组件
 footer = Vue.extend({
@@ -285,12 +280,12 @@ footer = Vue.extend({
 			</div>
 			<div class="fl">
 				<ul class="clear common_line_height">
-					<li><a href="#">首页</a></li>
-					<li><a href="#">App开发</a></li>
-					<li><a href="#">小程序开发</a></li>
-					<li><a href="#">H5&手机网页</a></li>
-					<li><a href="#">网站建设</a></li>
-					<li><a href="#">关于我们</a></li>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="app.html">App开发</a></li>
+					<li><a href="program.html">小程序开发</a></li>
+					<li><a href="phone.html">H5&手机网页</a></li>
+					<li><a href="h5.html">网站建设</a></li>
+					<li><a href="about.html">关于我们</a></li>
 				</ul>
 				<p class="common_line_height"><span>企业 QQ</span><span class="smaller">854111157 ／ 592819479</span></p>
 				<p class="middle_content common_line_height"><span>企业热线</span><span class="smaller">15018504813 ／ 15018505691 ／ 15018693554</span></p>
@@ -308,38 +303,78 @@ var footer = new Vue({
 	el: "#footer"
 });
 
-
-
-
-
-<!-- 联系我们 -->
+// 联系我们
 contact = Vue.extend({
 	template:`<div class="contact">
 		<div class="inputs">
 			<div class="name_numbers clear">
-				<input type="text" name="" value="" placeholder="*姓名">
-				<input type="text" name="" value="" placeholder="*联系电话">
+				<input type="text" name="" value="" v-model='name' placeholder="*姓名">
+				<input type="text" name="" value="" v-model='number' placeholder="*联系电话">
 			</div>
 			<div class="clear mail_type">
-					<input type="text" name="" value="" placeholder="邮箱">
-					<select>
-						<option selected="selected">*开发类型</option>
-						<option>Mercedes</option>
-						<option>Audi</option>
+					<input type="text" name="" value="" v-model='mail' placeholder="邮箱">
+					<select v-model="type">
+					  <option disabled value="">*开发类型</option>
+					  <option>App开发</option>
+					  <option>小程序开发</option>
+					  <option>网站定制</option>
+						<option>H5&手机网页</option>
 					</select>
 			</div>
 			<div class="company_name">
-				<input type="text" name="" value="" placeholder="公司名称">
+				<input type="text" name="" value="" v-model='company_name' placeholder="公司名称">
 			</div>
 			<div class="textarea">
-				<textarea name="name" placeholder="可填写您的行业和您的具体需求描述，方便我们更精准地了解您的需求，我们会及时联系您，谢谢..."></textarea>
+				<textarea name="name" v-model='needs' placeholder="可填写您的行业和您的具体需求描述，方便我们更精准地了解您的需求，我们会及时联系您，谢谢..."></textarea>
 			</div>
-			<div class="submit">
+			<div class="submit" @click.stop="submit()" >
 				提交
 			</div>
 		</div>
-	</div>
-`,
+	</div>`,
+	data:function(){
+		return{
+			name:'',
+			number:'',
+			mail:'',
+			company_name:'',
+			needs:'',
+			type:''
+		}
+	},
+	methods:{
+		post_requirements:function(){
+			$.ajax({
+				url:api+'api/Website/question',
+				data:{
+					nick_name:this.name,
+					phone:this.number,
+					email:this.email,
+					type:this.type,
+					content:this.needs,
+					company_name:this.company_name
+				},
+				success:function(res){
+					console.log(res);
+				}
+			})
+		},
+		submit:function(){
+			if(this.name==''||this.number==''||this.type==''){
+				alert('请完善信息');
+				return false;
+			}else if(checkPhone(this.number)==false){
+				alert('请输入正确的手机号码');
+				return false;
+			}else if(checkMail(this.mail)==false){
+				alert('请输入正确的邮箱');
+				return false;
+			}else{
+        // 提交客户需求
+				this.post_requirements();
+			}
+		}
+	}
 });
 Vue.component("common-contact", contact);
 var contact = new Vue({
