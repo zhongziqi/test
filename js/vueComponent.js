@@ -18,7 +18,7 @@ function checkMail(mail){
 }
 
 
-//获取链接中的参数 
+//获取链接中的参数
 function getUrlParam(name) {
 	// 获取当前地址链接
     var url = window.location.search;
@@ -112,10 +112,10 @@ header = Vue.extend({
 	    	                  <b class="b2"></b>
 	    	                  <div class="dev_type">
 	                            <ul class="clear">
-	                              <li @click='service_click(0)'><a class="font_color" href="app.html"><img src="img/ic_phone.png" alt=""><span>App开发</span></a><b></b></li>
-	                              <li @click='service_click(1)'><a class="font_color" href="program.html"><img src="img/ic_web_copy_4.png" alt=""><span>小程序开发</span></a><b></b></li>
-	                              <li @click='service_click(2)'><a class="font_color" href="h5.html"><img src="img/ic_web.png" alt=""><span>网站定制</span></a><b></b></li>
-	                              <li @click='service_click(3)'><a class="font_color" href="phone.html"><img src="img/ic_h5.png" alt=""><span>H5&手机网页</span></a></li>
+	                              <li><a class="font_color" href="app.html?type=app"><img src="img/ic_phone.png" alt=""><span>App开发</span></a><b></b></li>
+	                              <li><a class="font_color" href="program.html?type=program"><img src="img/ic_web_copy_4.png" alt=""><span>小程序开发</span></a><b></b></li>
+	                              <li><a class="font_color" href="h5.html?type=h5"><img src="img/ic_web.png" alt=""><span>网站定制</span></a><b></b></li>
+	                              <li><a class="font_color" href="phone.html?type=phone"><img src="img/ic_h5.png" alt=""><span>H5&手机网页</span></a></li>
 	                            </ul>
 	    										</div>
 	    	                </li>
@@ -131,9 +131,7 @@ header = Vue.extend({
 										}
 									},
 									methods:{
-										service_click:function(e){
 
-										}
 									}
 });
 Vue.component("common-header", header);
@@ -155,7 +153,7 @@ main = Vue.extend({
             </div>
             <!--案例的集合-->
 
-            <div class="box_center clear all_case_box "> 
+            <div class="box_center clear all_case_box ">
                 <div class="case_box" v-for="(item,index) in caseList" @click.stop='test(item.c_id)'>
                     <!--图片-->
                     <div class="case_img_Box" >
@@ -182,7 +180,7 @@ main = Vue.extend({
 										}
 									},
 									created(){
-										
+
 										// 判断是那个页面
 										let b  = getUrlParam('type');
 										let that = this;
@@ -314,7 +312,7 @@ var footer = new Vue({
 
 
 
-//  联系我们 
+//  联系我们
 contact = Vue.extend({
 	template:`<div class="contact">
 		<div class="inputs">
@@ -356,7 +354,7 @@ contact = Vue.extend({
 	methods:{
 		post_requirements:function(){
 			$.ajax({
-				url:api+'api/Website/question',
+				url:api+'/Website/question',
 				data:{
 					nick_name:this.name,
 					phone:this.number,

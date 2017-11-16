@@ -60,7 +60,7 @@
             <li v-bind:class="{customer_case_active:program}" @click="customer_case('program')">小程序开发</li>
           </ul>
           <ul class="lists clear" >
-            <li v-for='item in case_box'>
+            <li v-for='item in case_box' @click='to_detail(item.c_id)'>
               <img :src="item.img_url" alt="">
               <div class="lists_son"><img src="img/ic_selected.png" alt=""></div>
             </li>

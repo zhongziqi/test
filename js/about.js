@@ -46,7 +46,7 @@ var app = new Vue({
 		get_swiper:function(){
 			var that = this;
 			$.ajax({
-				url:api+'api/Website/about',
+				url:api+'/Website/about',
 				success:function(res){
 					var box = [];
 					var img_root = res.data.info;

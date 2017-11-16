@@ -38,13 +38,16 @@ var app = new Vue({
 		this.get_common_question();
   },
 	methods: {
+		to_detail:function(c_id){
+			window.location.href='detail.html?c_id='+c_id;
+		},
 		common_click:function(index){
 			this.click_index=index;
 		},
 		get_common_question:function(){
 			var that = this;
 			$.ajax({
-				url:api+'api/Website/problem',
+				url:api+'/Website/problem',
 				success:function(res){
 					that.common_question_box = res.data.list;
 				}
@@ -53,7 +56,7 @@ var app = new Vue({
 		get_succ_box:function(){
 			var that = this;
 			$.ajax({
-				url:api+'api/Website/other',
+				url:api+'/Website/other',
 				success:function(res){
 					that.succ_box = res.data.info;
 				}
@@ -62,7 +65,7 @@ var app = new Vue({
 		get_partner:function(){
 			var that = this;
 			$.ajax({
-				url:api+'api/Website/partner',
+				url:api+'/Website/partner',
 				success:function(res){
 					that.partner_box = res.data.list;
 					console.log(res);
@@ -103,7 +106,7 @@ var app = new Vue({
 		get_customer_case:function(type,case_type){
 			var that = this;
 			$.ajax({
-				url:api+'api/Website/casesList',
+				url:api+'/Website/casesList',
 				data:{
 					type:type,
 					case_type:case_type
@@ -125,7 +128,7 @@ var app = new Vue({
 		get_swiper_box:function(){
 			var that = this;
 			$.ajax({
-				url:api+'api/Website/banner',
+				url:api+'/Website/banner',
 				success:function(res){
 					that.swiper_box=res.data.bannerList;
 				}
